@@ -21,12 +21,12 @@ How to get newer version of ansible on RHEL6 by installing python2.7 and virutal
 
 
 ## INSTALL DEPENDENCIES FOR COMPLIING CODE
-**ONLINE *
+**ONLINE**
 ```
 # yum groupinstall "Developement tools"
 ```
 
- **OFFLINE*
+ **OFFLINE**
 ```							
 # yum install --disablerepo='*' --enablerepo='offlinerepo' \
 autoconf automake bison byacc cscope \
@@ -37,7 +37,15 @@ subversion swig systemtap binutils elfutils make patch
 ```
 							
 ## INSTALL SOME OTHER DEPENDENIES to avoid recompiling Python2.7 in the future.
-								
+
+**ONLINE**
+```
+# yum install
+zlib-devel bzip2-devel openssl-devel ncurses-devel \
+db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
+```
+
+**OFFLINE**
 ```
 # yum install --disablerepo='*' --enablerepo='offlinerepo' \
 zlib-devel bzip2-devel openssl-devel ncurses-devel \
@@ -80,7 +88,7 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 
 			
 ## Install VirtualENV as to be able to install Ansible without breaking anything
-***ONLINE***
+**ONLINE**
 ```
 # pip install virtualenv
 ```
@@ -100,12 +108,19 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 ```
 
 ### Install ansible whichever version in the virtual environment
+**ONLINE**
+```
+# pip install ansible==2.9.2
+# ansible --version
+# ansible localhost -m ping
+```
+**OFFLINE**
 ```
 # cd 5_pip_packages/5.2_ansible/ansible-2.9.2
 # pip install --no-index --find-links=. -r requirements.txt --no-build-isolation
 ```
 
-### Exiz the virtual environment
+### Exit the virtual environment
 ```
 # deactivate
 ```
