@@ -1,0 +1,104 @@
+https://www.digitalocean.com/community/tutorials/how-to-set-up-python-2-7-6-and-3-3-3-on-centos-6-4
+http://www.sromero.org/wiki/linux/aplicaciones/python/python34_centos6
+https://www.digitalocean.com/community/tutorials/how-to-set-up-python-2-7-6-and-3-3-3-on-centos-6-4
+https://www.ibm.com/support/knowledgecenter/bs/SSWTQQ_2.0.3/install/t_si_pythonpackagesoffline.html
+https://stackoverflow.com/questions/32302379/could-not-find-a-version-that-satisfies-the-requirement-package
+https://www.reddit.com/r/osx/comments/33840m/install_pip_offline_linuxwindows_mac_osx/
+https://stackoverflow.com/questions/36725843/installing-python-packages-without-internet-and-using-source-code-as-tar-gz-and
+https://webhostinggeeks.com/howto/how-to-resolve-another-app-is-currently-holding-the-yum-lock-waiting-for-it-to-exit/
+
+
+GOAL:  		To get newer versions of ansible work on RHEL6
+PROBLEM		Newer versions of Ansible require python 2.7
+			Newer versions of Ansible are not supported on RHEL6 any longer.
+			Existing software on RHEL6 monitoring machines relies on python 2.6
+			
+SOLUTION:	Install Python 2.7 next to Python 2.6 in a ways not to disturb any existing services
+
+				SET UP REPOSITORY
+								# cp -r 1_offlinerepo /root/offlinerepo
+								# cp offlinerepo/offline.repo /etc/yum.repos.d/
+								# yum repolist
+
+
+				INSTALL DEPENDENCIES
+					Need the "Developement tools" packages for that:
+							yum groupinstall "Developement tools"
+							
+							Will install: 
+								$ yum -y install autoconf automake bison byacc cscope ctags diffstat doxygen flex gcc gcc-c++ gcc-gfortran git indent intltool libtool patchutils rcs redhat-rpm-config rpm-build subversion swig systemtap binutils elfutils make patch
+							
+								#	yum install --disablerepo='*' --enablerepo='offlinerepo' \
+									autoconf automake bison byacc cscope \
+									ctags diffstat doxygen flex gcc gcc-c++ \
+									gcc-gfortran git indent intltool libtool \
+									patchutils rcs redhat-rpm-config rpm-build \
+									subversion swig systemtap binutils elfutils make patch
+								
+							
+								(Need an offlinerepo if installing without internet)
+								
+					Need some other developement tools too - because it is not possible to install them afterward without recompiling pythong
+								$ yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel zx-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel
+								
+								#	yum install --disablerepo='*' --enablerepo='offlinerepo' \
+									zlib-devel bzip2-devel openssl-devel ncurses-devel \
+									db4-devel sqlite-devel readline-devel tk-devel gdbm-devel \
+									zx-devel  libpcap-devel 
+
+					Dependencies for all those packages are:
+							- saved in file python2.7_repo.txt
+					
+					
+					
+				INSTALL PYTHON
+					# tar -xf Python-2.7.5.tar.xz
+					# cd Python-2.7.5
+					# ./configure
+					# make 
+					# make altinstall
+					# python2.7 --version
+					# python --version  			(should still show 2.6)
+
+			
+
+			Install PIP as to be able to install newer version of Ansible and its dependencies
+				
+				INSTALL one DEPENDENCY with python 2.7
+					$ cd 3_setuptoosl/setuptools-44.1.1
+					$ python2.7 setup.py install
+					
+
+				INSTALL P	IP with python 2.7
+					ONLINE
+					$ cd 4_pip
+					$ python2.7 get-pip.py install --no-setuptools --no-wheel
+					
+					OFFLINE
+					$ python2.7 pip-20.3.4-py2.py3-none-any.whl/pip install --no-index  pip-20.3.4-py2.py3-none-any.whl --find-links=.	IBM
+					$ python2.7 pip-20.3.4-py2.py3-none-any.whl/pip install --no-index  pip-20.3.4-py2.py3-none-any.whl	 				GITHUB
+
+
+			
+			Install VirtualENV as to be able to install Ansible in to it
+					ONLINE
+					$ pip install virtualenv
+					
+					OFFLINE
+					$ cd virtualenv
+					$ pip install --no-index --find-links=. -r requirements.txt
+			
+			Configure virtual environemnt
+					$ mkdir ansible_virutal
+					$ virtualenv ansible_virtual
+					$ source ansible_virtual/bin/activate			# this puts you in the virtual environment
+			
+					Install ansible whichever version in the virtual environment
+					$ cd Python3ONRhel6/5_pip_packages/5.2_ansible/ansible-2.9.2
+					$ pip install --no-index --find-links=. -r requirements.txt --no-build-isolation
+					
+					Get out of the virtual environment
+					$ deactivate
+
+yumdownloader --resolve bzip2-devel
+pip download -r requirements.txt
