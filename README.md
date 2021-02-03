@@ -20,7 +20,7 @@ How to get newer version of ansible on RHEL6 by installing python2.7 and virutal
 ```
 
 
-### INSTALL DEPENDENCIES FOR COMPLIING CODE
+## INSTALL DEPENDENCIES FOR COMPLIING CODE
 **ONLINE MACHINE**
 
 Need the "Developement tools" packages for that:
@@ -36,7 +36,7 @@ patchutils rcs redhat-rpm-config rpm-build \
 subversion swig systemtap binutils elfutils make patch
 ```
 							
-### INSTALL SOME OTHER DEPENDENIES to avoid recompiling Python2.7 in the future.
+## INSTALL SOME OTHER DEPENDENIES to avoid recompiling Python2.7 in the future.
 								
 ```
 # yum install --disablerepo='*' --enablerepo='offlinerepo' \
@@ -44,7 +44,7 @@ zlib-devel bzip2-devel openssl-devel ncurses-devel \
 db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 ```
 	
-### INSTALL PYTHON
+## INSTALL PYTHON
 ```
 # cd 2_python-2.7.5
 # tar -xf Python-2.7.5.tar.xz
@@ -58,13 +58,13 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 ```
 			
 
-### Install the single dependecy for PIP
+## Install the single dependecy for PIP
 ```
 # cd \3_setup-tools\setuptools-44.1.1
 # python2.7 setup.py install
 ```
 
-### INSTALL PIP with python 2.7
+## INSTALL PIP with python 2.7
 
 **ONLINE**
 ```
@@ -79,7 +79,7 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 ```
 
 			
-### Install VirtualENV as to be able to install Ansible without breaking anything
+## Install VirtualENV as to be able to install Ansible without breaking anything
 ***ONLINE***
 ```
 # pip install virtualenv
@@ -91,7 +91,7 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 # pip install --no-index --find-links=. -r requirements.txt
 ```
 
-### Configure virtual environemnt
+## Configure virtual environemnt
 ```
 # cd ~
 # mkdir ansible_virutal
