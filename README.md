@@ -12,7 +12,7 @@ How to get newer version of ansible on RHEL6 by installing python2.7 and virutal
 			
 **SOLUTION**:	Install Python 2.7 next to Python 2.6 in a way not to disturb any existing services
 
-## Step 1: SET UP an offline YUM REPOSITORY
+## SET UP an offline YUM REPOSITORY
 ```
 # cp -r 1_offlinerepo /root/offlinerepo
 # cp offlinerepo/offline.repo /etc/yum.repos.d/
@@ -21,14 +21,14 @@ How to get newer version of ansible on RHEL6 by installing python2.7 and virutal
 
 
 ## INSTALL DEPENDENCIES FOR COMPLIING CODE
-**ONLINE MACHINE**
+**ONLINE *
+```
+# yum groupinstall "Developement tools"
+```
 
-Need the "Developement tools" packages for that:
-							yum groupinstall "Developement tools"
-							
- **OFFLINE MACHINE**
+ **OFFLINE*
 ```							
-#	yum install --disablerepo='*' --enablerepo='offlinerepo' \
+# yum install --disablerepo='*' --enablerepo='offlinerepo' \
 autoconf automake bison byacc cscope \
 ctags diffstat doxygen flex gcc gcc-c++ \
 gcc-gfortran git indent intltool libtool \
