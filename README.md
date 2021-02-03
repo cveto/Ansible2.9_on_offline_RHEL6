@@ -40,7 +40,7 @@ subversion swig systemtap binutils elfutils make patch
 
 **ONLINE**
 ```
-# yum install
+# yum install \
 zlib-devel bzip2-devel openssl-devel ncurses-devel \
 db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 ```
@@ -68,7 +68,7 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
 
 ## Install the single dependecy for PIP
 ```
-# cd \3_setup-tools\setuptools-44.1.1
+# cd 3_setup-tools\setuptools-44.1.1
 # python2.7 setup.py install
 ```
 
@@ -95,7 +95,7 @@ db4-devel sqlite-devel readline-devel tk-devel gdbm-devel
   
 **OFFLINE**
 ```
-# cd virtualenv
+# cd 5_pip_packages
 # pip install --no-index --find-links=. -r requirements.txt
 ```
 
