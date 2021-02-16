@@ -1,0 +1,141 @@
+[root@pk-s-adminj09 Python3ONRhel6]# yum install --disablerepo='*' --enablerepo='offlinerepo' zlib-devel bzip2-devel openssl-devel ncurses-devel db4-devel sqlite-devel readline-devel tk-devel gdbm-devel zx-devel  libpcap-devel
+Loaded plugins: fastestmirror, priorities, product-id, security, subscription-manager
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+No package zx-devel available.
+No package libpcap-devel available.
+Resolving Dependencies
+--> Running transaction check
+---> Package bzip2-devel.x86_64 0:1.0.5-7.el6_0 will be installed
+---> Package db4-devel.x86_64 0:4.7.25-20.el6_7 will be updated
+---> Package db4-devel.x86_64 0:4.7.25-22.el6 will be an update
+--> Processing Dependency: db4-cxx = 4.7.25-22.el6 for package: db4-devel-4.7.25-22.el6.x86_64
+--> Processing Dependency: db4 = 4.7.25-22.el6 for package: db4-devel-4.7.25-22.el6.x86_64
+---> Package gdbm-devel.x86_64 0:1.8.0-38.el6 will be updated
+---> Package gdbm-devel.x86_64 0:1.8.0-39.el6 will be an update
+--> Processing Dependency: gdbm = 1.8.0-39.el6 for package: gdbm-devel-1.8.0-39.el6.x86_64
+---> Package ncurses-devel.x86_64 0:5.7-4.20090207.el6 will be installed
+---> Package openssl-devel.x86_64 0:1.0.1e-58.el6_10 will be installed
+--> Processing Dependency: openssl = 1.0.1e-58.el6_10 for package: openssl-devel-1.0.1e-58.el6_10.x86_64
+--> Processing Dependency: krb5-devel for package: openssl-devel-1.0.1e-58.el6_10.x86_64
+---> Package readline-devel.x86_64 0:6.0-4.el6 will be installed
+---> Package sqlite-devel.x86_64 0:3.6.20-1.el6_7.2 will be installed
+---> Package tk-devel.x86_64 1:8.5.7-5.el6 will be installed
+--> Processing Dependency: tk = 1:8.5.7-5.el6 for package: 1:tk-devel-8.5.7-5.el6.x86_64
+--> Processing Dependency: tcl-devel = 1:8.5.7 for package: 1:tk-devel-8.5.7-5.el6.x86_64
+--> Processing Dependency: libXft-devel for package: 1:tk-devel-8.5.7-5.el6.x86_64
+--> Processing Dependency: libX11-devel for package: 1:tk-devel-8.5.7-5.el6.x86_64
+--> Processing Dependency: libtk8.5.so()(64bit) for package: 1:tk-devel-8.5.7-5.el6.x86_64
+---> Package zlib-devel.x86_64 0:1.2.3-29.el6 will be installed
+--> Running transaction check
+---> Package db4.x86_64 0:4.7.25-20.el6_7 will be updated
+--> Processing Dependency: db4 = 4.7.25-20.el6_7 for package: db4-utils-4.7.25-20.el6_7.x86_64
+---> Package db4.x86_64 0:4.7.25-22.el6 will be an update
+---> Package db4-cxx.x86_64 0:4.7.25-20.el6_7 will be updated
+---> Package db4-cxx.x86_64 0:4.7.25-22.el6 will be an update
+---> Package gdbm.x86_64 0:1.8.0-38.el6 will be updated
+---> Package gdbm.x86_64 0:1.8.0-39.el6 will be an update
+---> Package krb5-devel.x86_64 0:1.10.3-65.el6 will be installed
+--> Processing Dependency: libkadm5(x86-64) = 1.10.3-65.el6 for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: krb5-libs = 1.10.3-65.el6 for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: libselinux-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: libcom_err-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+---> Package libX11-devel.x86_64 0:1.6.4-4.el6_10 will be installed
+--> Processing Dependency: libX11 = 1.6.4-4.el6_10 for package: libX11-devel-1.6.4-4.el6_10.x86_64
+--> Processing Dependency: pkgconfig(xcb) >= 1.11.1 for package: libX11-devel-1.6.4-4.el6_10.x86_64
+--> Processing Dependency: pkgconfig(xproto) for package: libX11-devel-1.6.4-4.el6_10.x86_64
+--> Processing Dependency: pkgconfig(xcb) for package: libX11-devel-1.6.4-4.el6_10.x86_64
+--> Processing Dependency: pkgconfig(kbproto) for package: libX11-devel-1.6.4-4.el6_10.x86_64
+---> Package libXft-devel.x86_64 0:2.3.2-1.el6 will be installed
+--> Processing Dependency: libXft = 2.3.2-1.el6 for package: libXft-devel-2.3.2-1.el6.x86_64
+--> Processing Dependency: pkgconfig(xrender) for package: libXft-devel-2.3.2-1.el6.x86_64
+--> Processing Dependency: pkgconfig(freetype2) for package: libXft-devel-2.3.2-1.el6.x86_64
+--> Processing Dependency: pkgconfig(fontconfig) for package: libXft-devel-2.3.2-1.el6.x86_64
+---> Package openssl.x86_64 0:1.0.1e-42.el6 will be updated
+---> Package openssl.x86_64 0:1.0.1e-58.el6_10 will be an update
+---> Package tcl-devel.x86_64 1:8.5.7-6.el6 will be installed
+--> Processing Dependency: tcl = 1:8.5.7-6.el6 for package: 1:tcl-devel-8.5.7-6.el6.x86_64
+--> Processing Dependency: libtcl8.5.so()(64bit) for package: 1:tcl-devel-8.5.7-6.el6.x86_64
+---> Package tk.x86_64 1:8.5.7-5.el6 will be installed
+--> Running transaction check
+---> Package db4-utils.x86_64 0:4.7.25-20.el6_7 will be updated
+---> Package db4-utils.x86_64 0:4.7.25-22.el6 will be an update
+---> Package fontconfig-devel.x86_64 0:2.8.0-5.el6 will be installed
+---> Package freetype-devel.x86_64 0:2.3.11-19.el6_10 will be installed
+--> Processing Dependency: freetype = 2.3.11-19.el6_10 for package: freetype-devel-2.3.11-19.el6_10.x86_64
+---> Package keyutils-libs-devel.x86_64 0:1.4-5.el6 will be installed
+---> Package krb5-libs.x86_64 0:1.10.3-42.el6 will be updated
+--> Processing Dependency: krb5-libs = 1.10.3-42.el6 for package: krb5-workstation-1.10.3-42.el6.x86_64
+---> Package krb5-libs.x86_64 0:1.10.3-65.el6 will be an update
+---> Package libX11.x86_64 0:1.6.0-6.el6 will be updated
+---> Package libX11.x86_64 0:1.6.4-4.el6_10 will be an update
+--> Processing Dependency: libX11-common = 1.6.4-4.el6_10 for package: libX11-1.6.4-4.el6_10.x86_64
+---> Package libXft.x86_64 0:2.3.1-2.el6 will be updated
+---> Package libXft.x86_64 0:2.3.2-1.el6 will be an update
+---> Package libXrender-devel.x86_64 0:0.9.10-1.el6 will be installed
+--> Processing Dependency: libXrender = 0.9.10-1.el6 for package: libXrender-devel-0.9.10-1.el6.x86_64
+---> Package libcom_err-devel.x86_64 0:1.41.12-24.el6 will be installed
+--> Processing Dependency: libcom_err = 1.41.12-24.el6 for package: libcom_err-devel-1.41.12-24.el6.x86_64
+---> Package libkadm5.x86_64 0:1.10.3-65.el6 will be installed
+---> Package libselinux-devel.x86_64 0:2.0.94-7.el6 will be installed
+--> Processing Dependency: libselinux = 2.0.94-7.el6 for package: libselinux-devel-2.0.94-7.el6.x86_64
+--> Processing Dependency: libsepol-devel >= 2.0.32-1 for package: libselinux-devel-2.0.94-7.el6.x86_64
+--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.0.94-7.el6.x86_64
+---> Package libxcb-devel.x86_64 0:1.12-4.el6 will be installed
+--> Processing Dependency: libxcb = 1.12-4.el6 for package: libxcb-devel-1.12-4.el6.x86_64
+--> Processing Dependency: pkgconfig(xau) >= 0.99.2 for package: libxcb-devel-1.12-4.el6.x86_64
+--> Processing Dependency: libxcb-xkb.so.1()(64bit) for package: libxcb-devel-1.12-4.el6.x86_64
+--> Processing Dependency: libxcb-xinput.so.0()(64bit) for package: libxcb-devel-1.12-4.el6.x86_64
+--> Processing Dependency: libxcb-sync.so.1()(64bit) for package: libxcb-devel-1.12-4.el6.x86_64
+--> Processing Dependency: libxcb-present.so.0()(64bit) for package: libxcb-devel-1.12-4.el6.x86_64
+--> Processing Dependency: libxcb-dri3.so.0()(64bit) for package: libxcb-devel-1.12-4.el6.x86_64
+---> Package tcl.x86_64 1:8.5.7-6.el6 will be installed
+---> Package xorg-x11-proto-devel.noarch 0:7.7-14.el6 will be installed
+--> Running transaction check
+---> Package freetype.x86_64 0:2.3.11-15.el6_6.1 will be updated
+---> Package freetype.x86_64 0:2.3.11-19.el6_10 will be an update
+---> Package krb5-workstation.x86_64 0:1.10.3-42.el6 will be updated
+---> Package krb5-workstation.x86_64 0:1.10.3-65.el6 will be an update
+---> Package libX11-common.noarch 0:1.6.0-6.el6 will be updated
+---> Package libX11-common.noarch 0:1.6.4-4.el6_10 will be an update
+---> Package libXau-devel.x86_64 0:1.0.6-4.el6 will be installed
+---> Package libXrender.x86_64 0:0.9.8-2.1.el6 will be updated
+---> Package libXrender.x86_64 0:0.9.10-1.el6 will be an update
+---> Package libcom_err.x86_64 0:1.41.12-22.el6 will be updated
+--> Processing Dependency: libcom_err = 1.41.12-22.el6 for package: libss-1.41.12-22.el6.x86_64
+--> Processing Dependency: libcom_err = 1.41.12-22.el6 for package: e2fsprogs-libs-1.41.12-22.el6.x86_64
+--> Processing Dependency: libcom_err = 1.41.12-22.el6 for package: e2fsprogs-1.41.12-22.el6.x86_64
+---> Package libcom_err.x86_64 0:1.41.12-24.el6 will be an update
+---> Package libselinux.x86_64 0:2.0.94-5.8.el6 will be updated
+--> Processing Dependency: libselinux = 2.0.94-5.8.el6 for package: libselinux-utils-2.0.94-5.8.el6.x86_64
+--> Processing Dependency: libselinux = 2.0.94-5.8.el6 for package: libselinux-python-2.0.94-5.8.el6.x86_64
+---> Package libselinux.x86_64 0:2.0.94-7.el6 will be an update
+---> Package libsepol-devel.x86_64 0:2.0.41-4.el6 will be installed
+---> Package libxcb.x86_64 0:1.9.1-3.el6 will be updated
+---> Package libxcb.x86_64 0:1.12-4.el6 will be an update
+--> Running transaction check
+---> Package e2fsprogs.x86_64 0:1.41.12-22.el6 will be updated
+---> Package e2fsprogs.x86_64 0:1.41.12-24.el6 will be an update
+---> Package e2fsprogs-libs.x86_64 0:1.41.12-22.el6 will be updated
+---> Package e2fsprogs-libs.x86_64 0:1.41.12-24.el6 will be an update
+---> Package libselinux.x86_64 0:2.0.94-5.8.el6 will be updated
+--> Processing Dependency: libselinux = 2.0.94-5.8.el6 for package: libselinux-python-2.0.94-5.8.el6.x86_64
+---> Package libselinux-utils.x86_64 0:2.0.94-5.8.el6 will be updated
+---> Package libselinux-utils.x86_64 0:2.0.94-7.el6 will be an update
+---> Package libss.x86_64 0:1.41.12-22.el6 will be updated
+---> Package libss.x86_64 0:1.41.12-24.el6 will be an update
+--> Finished Dependency Resolution
+Error: Package: libselinux-python-2.0.94-5.8.el6.x86_64 (@rhel-rhel6-server)
+           Requires: libselinux = 2.0.94-5.8.el6
+           Removing: libselinux-2.0.94-5.8.el6.x86_64 (@base)
+               libselinux = 2.0.94-5.8.el6
+           Updated By: libselinux-2.0.94-7.el6.x86_64 (offlinerepo)
+               libselinux = 2.0.94-7.el6
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
+
+
+I guess download with dependencies:
+- libselinux-python-2.0.94-5.8.el6.x86_64

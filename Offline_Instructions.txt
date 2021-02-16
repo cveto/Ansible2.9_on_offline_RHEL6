@@ -1,0 +1,105 @@
+GOAL:  		To get newer versions of ansible work on RHEL6
+PROBLEM		Newer versions of Ansible require python 2.7
+			Newer versions of Ansible are not supported on RHEL6 any longer.
+			Existing software on RHEL6 monitoring machines relies on python 2.6
+			
+SOLUTION:	Install Python 2.7 next to Python 2.6 in a ways not to disturb any existing services
+
+				SET UP REPOSITORY
+								# cp -r 1_offlinerepo /root/offlinerepo
+								# cp 1_offlinerepo/offlinerepo.repo /etc/yum.repos.d/
+								# cd /root/offlinerepo 
+								# createrepo . --update
+								# yum repolist
+
+
+				INSTALL DEPENDENCIES
+					"Developement tools" 
+					
+								#	yum install --disablerepo='*' --enablerepo='offlinerepo' \
+									autoconf automake bison byacc cscope \
+									ctags diffstat doxygen flex gcc gcc-c++ \
+									gcc-gfortran git indent intltool libtool \
+									patchutils rcs redhat-rpm-config rpm-build \
+									subversion swig systemtap binutils elfutils make patch
+									
+					"Packages needed pre pythoing install"
+								#	yum install --disablerepo='*' --enablerepo='offlinerepo' \
+									zlib-devel bzip2-devel ncurses-devel \
+									db4-devel sqlite-devel readline-devel tk-devel gdbm-devel \
+									zx-devel  libpcap-devel openssl-devel
+				
+					"libselinux"
+								#	yum install libselinux				
+
+
+				INSTALL PYTHON
+					# tar -xf Python-2.7.5.tar.xz
+					# cd Python-2.7.5
+					# ./configure
+					# make 
+					# make altinstall
+					# python2.7 --version
+					# python --version  			(should still show 2.6)
+
+
+
+				INSTALL PIP
+				
+					INSTALL a a single PIP dependency DEPENDENCY with python 2.7
+						# cd 3_setuptoosl/setuptools-44.1.1
+						# python2.7 setup.py install
+					
+
+					INSTALL PIP with python 2.7
+						# python2.7 pip-20.3.4-py2.py3-none-any.whl/pip install --no-index  pip-20.3.4-py2.py3-none-any.whl	 				GITHUB
+
+
+
+				INSTALL VirtualENV as to be able to install Ansible in to it
+
+						# cd virtualenv
+						# pip install --no-index --find-links=. -r requirements.txt
+			
+
+
+
+		## INSTALLATION COMPLETE - CONFIGURE VIRTUAL ENVIRONMENT
+
+				BECOME srv-pkiaut
+						# su - srv-pkiaut
+						$ cd
+						
+				
+				Configure virtual environemnt
+						$ mkdir ~/ansible_virtual
+						$ virtualenv ansible_virtual
+						
+				Create an alias 
+						
+						$ vi ~/.basrc
+						
+						Add line:
+						alias virtualansible='source ~/ansible_virtual/bin/activate'
+				
+				Activate virtual environemnt
+						$ virtualansible
+			
+				Install ansible whichever version in the virtual environment
+						$ cd Python3ONRhel6/5_pip_packages/5.2_ansible/ansible-2.9.2
+						$ pip install --no-index --find-links=. -r requirements.txt --no-build-isolation
+						$ ansible --version
+				
+				Copy selinux library to the virtual environment
+						$ cp -r /usr/lib64/python2.6/site-packages/selinux/ ~/ansible_virtual/lib/python2.7/site-packages
+					
+				Get out of the virtual environment
+					$ deactivate
+
+
+
+				
+				
+				
+
+Delete the repository in the end.

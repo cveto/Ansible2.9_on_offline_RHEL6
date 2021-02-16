@@ -1,0 +1,14 @@
+Error: Package: gettext-devel-0.17-18.el6.x86_64 (offlinerepo)
+           Requires: libgettextsrc-0.17.so()(64bit)
+           Removing: gettext-0.17-16.el6.x86_64 (@anaconda-RedHatEnterpriseLinux-201311111358.x86_64/6.5)
+               libgettextsrc-0.17.so()(64bit)
+           Updated By: gettext-0.17-18.el6.i686 (offlinerepo)
+               Not found
+Error: Package: gettext-devel-0.17-18.el6.x86_64 (offlinerepo)
+           Requires: libgettextlib-0.17.so()(64bit)
+           Removing: gettext-0.17-16.el6.x86_64 (@anaconda-RedHatEnterpriseLinux-201311111358.x86_64/6.5)
+               libgettextlib-0.17.so()(64bit)
+           Updated By: gettext-0.17-18.el6.i686 (offlinerepo)
+               Not found
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
